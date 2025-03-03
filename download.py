@@ -68,7 +68,7 @@ def fetch_download_links():
         update_log(f"🔍 Đang xử lý: {url}")
 
         try:
-            response = requests.post(API_URL, data={"url": url, "token": "your_token", "hash": hash_value}, verify=CERT_PATH)
+            response = requests.post(API_URL, data={"url": url, "token": "your_token", "hash": hash_value}, verify=True)
             data = response.json()
             videos = data.get("medias", [])
 
